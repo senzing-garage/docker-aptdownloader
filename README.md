@@ -2,15 +2,19 @@
 
 ## Overview
 
-FIXME:
+A thin wrapper over `apt-get install --download-only`.
 
-A running docker container downloads the latest
+The docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.deb` and
 `senzingdata-v1-M.m.p-xxxxx.x86_64.deb`
 files by running the following command:
 
 ```console
-aptdownloader --destdir /download senzingapi senzingdata-v1
+apt-get install \
+  --download-only \
+  -o Dir::Cache=/tmp \
+  -o Dir::Cache::archives=/download \
+  senzingapi senzingdata-v1
 ```
 
 ### Related artifacts
