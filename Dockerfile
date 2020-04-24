@@ -37,5 +37,5 @@ COPY ./rootfs /
 
 VOLUME /download
 
-ENTRYPOINT ["apt-get", "install", "--download-only", "-o", "Dir::Cache=/tmp",  "-o", "Dir::Cache::archives=/download"]
+ENTRYPOINT ["apt-get", "-y", "install", "--download-only", "-o", "Dir::Cache=/tmp",  "-o", "Dir::Cache::archives=/download"]
 CMD ["senzingapi", "senzingdata-v1"]
