@@ -1,76 +1,73 @@
 # docker-aptdownloader
 
+## Preamble
+
+At [Senzing](http://senzing.com),
+we strive to create GitHub documentation in a
+"[don't make me think](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/dont-make-me-think.md)" style.
+For the most part, instructions are copy and paste.
+Whenever thinking is needed, it's marked with a "thinking" icon :thinking:.
+Whenever customization is needed, it's marked with a "pencil" icon :pencil2:.
+If the instructions are not clear, please let us know by opening a new
+[Documentation issue](https://github.com/Senzing/docker-aptdownloader/issues/new?template=documentation_request.md)
+describing where we can improve.   Now on with the show...
+
 ## Overview
 
 A thin wrapper over `apt-get install --download-only`.
 
-The docker container downloads the latest
+The Docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.deb` and
-`senzingdata-v1-M.m.p-xxxxx.x86_64.deb`
-files by running the following command:
-
-```console
-apt-get install \
-  --download-only \
-  -o Dir::Cache=/tmp \
-  -o Dir::Cache::archives=/download \
-  senzingapi senzingdata-v1
-```
-
-### Related artifacts
-
-1. [DockerHub](https://hub.docker.com/r/senzing/aptdownloader)
+`senzingdata-v1-M.m.p-xxxxx.x86_64.deb` files.
 
 ### Contents
 
+1. [Related artifacts](#related-artifacts)
 1. [Expectations](#expectations)
-    1. [Space](#space)
-    1. [Time](#time)
-    1. [Background knowledge](#background-knowledge)
 1. [Demonstrate using Docker](#demonstrate-using-docker)
-    1. [Configuration](#configuration)
-    1. [Run docker container](#run-docker-container)
+    1. [Prerequisites for Docker](#prerequisites-for-docker)
+    1. [Run Docker container](#run-docker-container)
 1. [Develop](#develop)
-    1. [Prerequisite software](#prerequisite-software)
+    1. [Prerequisites for development](#prerequisites-for-development)
     1. [Clone repository](#clone-repository)
-    1. [Build docker image for development](#build-docker-image-for-development)
+    1. [Build Docker image](#build-docker-image)
 1. [Examples](#examples)
+    1. [Examples of Docker](#examples-of-docker)
+1. [Advanced](#advanced)
+    1. [Configuration](#configuration)
 1. [Errors](#errors)
 1. [References](#references)
 
-### Legend
+#### Legend
 
 1. :thinking: - A "thinker" icon means that a little extra thinking may be required.
-   Perhaps you'll need to make some choices.
+   Perhaps there are some choices to be made.
    Perhaps it's an optional step.
 1. :pencil2: - A "pencil" icon means that the instructions may need modification before performing.
 1. :warning: - A "warning" icon means that something tricky is happening, so pay attention.
 
+## Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/senzing/aptdownloader)
+
 ## Expectations
 
-### Space
-
-This repository and demonstration require 6 GB free disk space.
-
-### Time
-
-Budget 30 minutes to get the demonstration up-and-running, depending on CPU and network speeds.
-
-### Background knowledge
-
-This repository assumes a working knowledge of:
-
-1. [Docker](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/docker.md)
+- **Space:** This repository and demonstration require 6 GB free disk space.
+- **Time:** Budget 30 minutes to get the demonstration up-and-running, depending on CPU and network speeds.
+- **Background knowledge:** This repository assumes a working knowledge of:
+  - [Docker](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/docker.md)
 
 ## Demonstrate using Docker
 
-### Configuration
+### Prerequisites for Docker
 
-Configuration values specified by environment variable or command line parameter.
+:thinking: The following tasks need to be complete before proceeding.
+These are "one-time tasks" which may already have been completed.
 
-- **[SENZING_DEB_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_deb_dir)**
+1. The following software programs need to be installed:
+    1. [docker](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-docker.md)
 
-### Run docker container
+### Run Docker container
 
 1. :pencil2: Set environment variables.
    Example:
@@ -79,7 +76,7 @@ Configuration values specified by environment variable or command line parameter
     export SENZING_DEB_DIR=~/Downloads
     ```
 
-1. Run docker container.
+1. Run Docker container.
    Example:
 
     ```console
@@ -89,15 +86,21 @@ Configuration values specified by environment variable or command line parameter
       senzing/aptdownloader
     ```
 
+1. For more examples of use, see [Examples of Docker](#examples-of-docker).
+
 ## Develop
 
-### Prerequisite software
+The following instructions are used when modifying and building the Docker image.
 
-The following software programs need to be installed:
+### Prerequisites for development
 
-1. [git](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-git.md)
-1. [make](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-make.md)
-1. [docker](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-docker.md)
+:thinking: The following tasks need to be complete before proceeding.
+These are "one-time tasks" which may already have been completed.
+
+1. The following software programs need to be installed:
+    1. [git](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-git.md)
+    1. [make](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-make.md)
+    1. [docker](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-docker.md)
 
 ### Clone repository
 
@@ -113,14 +116,16 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
     ```
 
-1. Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
+1. Using the environment variables values just set, follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
 
-### Build docker image for development
+### Build Docker image
 
 1. **Option #1:** Using `docker` command and GitHub.
 
     ```console
-    sudo docker build --tag senzing/aptdownloader https://github.com/senzing/docker-aptdownloader.git
+    sudo docker build \
+      --tag senzing/aptdownloader \
+      https://github.com/senzing/docker-aptdownloader.git
     ```
 
 1. **Option #2:** Using `docker` command and local repository.
@@ -137,9 +142,22 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
     sudo make docker-build
     ```
 
-    Note: `sudo make docker-build-development-cache` can be used to create cached docker layers.
+    Note: `sudo make docker-build-development-cache` can be used to create cached Docker layers.
 
 ## Examples
+
+### Examples of Docker
+
+The following examples require initialization described in
+[Demonstrate using Docker](#demonstrate-using-docker).
+
+## Advanced
+
+### Configuration
+
+Configuration values specified by environment variable or command line parameter.
+
+- **[SENZING_DEB_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_deb_dir)**
 
 ## Errors
 
