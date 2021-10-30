@@ -1,11 +1,11 @@
-ARG BASE_IMAGE=debian:10.2
+ARG BASE_IMAGE=debian:10.10@sha256:e5cfab8012b17d80f93a7f567797b0c8a2839069d4f50e499152162152518663
 FROM ${BASE_IMAGE}
 
-ENV REFRESHED_AT=2020-01-29
+ENV REFRESHED_AT=2020-10-30
 
 LABEL Name="senzing/aptdownloader" \
       Maintainer="support@senzing.com" \
-      Version="1.1.2"
+      Version="1.1.3"
 
 HEALTHCHECK CMD ["/app/healthcheck.sh"]
 
