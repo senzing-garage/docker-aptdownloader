@@ -11,7 +11,7 @@ A thin wrapper over `apt-get install --download-only`.
 
 The Docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.deb` and
-`senzingdata-v1-M.m.p-xxxxx.x86_64.deb` files.
+`senzingdata-v3-M.m.p-xxxxx.x86_64.deb` files.
 
 
 ### Contents
