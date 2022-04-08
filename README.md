@@ -1,16 +1,9 @@
 # docker-aptdownloader
 
-## Preamble
+## Synopsis
 
-At [Senzing](http://senzing.com),
-we strive to create GitHub documentation in a
-"[don't make me think](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/dont-make-me-think.md)" style.
-For the most part, instructions are copy and paste.
-Whenever thinking is needed, it's marked with a "thinking" icon :thinking:.
-Whenever customization is needed, it's marked with a "pencil" icon :pencil2:.
-If the instructions are not clear, please let us know by opening a new
-[Documentation issue](https://github.com/Senzing/docker-aptdownloader/issues/new?template=documentation_request.md)
-describing where we can improve.   Now on with the show...
+A Docker wrapper over the `apt-get` command
+tuned to download the `.deb` file.
 
 ## Overview
 
@@ -20,8 +13,11 @@ The Docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.deb` and
 `senzingdata-v1-M.m.p-xxxxx.x86_64.deb` files.
 
+
 ### Contents
 
+1. [Preamble](#preamble)
+    1. [Legend](#legend)
 1. [Related artifacts](#related-artifacts)
 1. [Expectations](#expectations)
 1. [Demonstrate using Docker](#demonstrate-using-docker)
@@ -38,7 +34,19 @@ The Docker container downloads the latest
 1. [Errors](#errors)
 1. [References](#references)
 
-#### Legend
+## Preamble
+
+At [Senzing](http://senzing.com),
+we strive to create GitHub documentation in a
+"[don't make me think](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/dont-make-me-think.md)" style.
+For the most part, instructions are copy and paste.
+Whenever thinking is needed, it's marked with a "thinking" icon :thinking:.
+Whenever customization is needed, it's marked with a "pencil" icon :pencil2:.
+If the instructions are not clear, please let us know by opening a new
+[Documentation issue](https://github.com/Senzing/docker-aptdownloader/issues/new?template=documentation_request.md)
+describing where we can improve.   Now on with the show...
+
+### Legend
 
 1. :thinking: - A "thinker" icon means that a little extra thinking may be required.
    Perhaps there are some choices to be made.
