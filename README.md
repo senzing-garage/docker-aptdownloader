@@ -13,7 +13,6 @@ The Docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.deb` and
 `senzingdata-v3-M.m.p-xxxxx.x86_64.deb` files.
 
-
 ### Contents
 
 1. [Preamble](#preamble)
