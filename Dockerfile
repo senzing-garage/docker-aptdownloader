@@ -6,7 +6,7 @@ ARG SENZING_APT_REPOSITORY_URL=https://senzing-production-apt.s3.amazonaws.com/s
 
 LABEL Name="senzing/aptdownloader" \
       Maintainer="support@senzing.com" \
-      Version="1.1.6"
+      Version="1.1.7"
 
 HEALTHCHECK CMD ["/app/healthcheck.sh"]
 
@@ -43,4 +43,4 @@ ENV DEBIAN_FRONTEND noninteractive
 VOLUME /download
 
 ENTRYPOINT ["/app/apt-helper.sh"]
-CMD ["senzingapi", "senzingdata-v3"]
+CMD ["senzingapi", "senzingdata-v4"]
