@@ -10,26 +10,27 @@ LABEL Name="senzing/aptdownloader" \
 
 HEALTHCHECK CMD ["/app/healthcheck.sh"]
 
-# Install packages via apt.
+# Install packages via apt-get.
 
-RUN apt update \
-  && apt -y install \
+RUN apt-get update \
+  && apt-get -y install \
   apt-transport-https \
   curl \
   gnupg \
-  sudo \
   wget
 
 # Install Senzing repository index.
 
 RUN curl --output /install.deb ${SENZING_APT_REPOSITORY_URL} \
-  && apt -y install /install.deb \
-  && apt update \
+  && apt-get -y install /install.deb \
+  && apt-get update \
   && rm /install.deb
 
 # Copy files from repository.
 
 COPY ./rootfs /
+
+USER 1001
 
 ## Set environment
 
