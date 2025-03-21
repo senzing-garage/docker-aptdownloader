@@ -34,7 +34,7 @@ USER 1001
 
 ## Set environment
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Runtime execution.
 
