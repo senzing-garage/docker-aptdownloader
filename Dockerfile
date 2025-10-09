@@ -13,8 +13,9 @@ HEALTHCHECK CMD ["/app/healthcheck.sh"]
 # Install packages via apt-get.
 
 RUN apt-get update \
-  && apt-get -y install \
+  && apt-get -y --no-install-recommends install \
   apt-transport-https \
+  ca-certificates \
   curl \
   gnupg \
   wget
@@ -22,7 +23,7 @@ RUN apt-get update \
 # Install Senzing repository index.
 
 RUN curl --output /install.deb ${SENZING_APT_REPOSITORY_URL} \
-  && apt-get -y install /install.deb \
+  && apt-get -y --no-install-recommends install /install.deb \
   && apt-get update \
   && rm /install.deb
 
