@@ -5,24 +5,25 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
-      "alnum",
-      "aptdownloader",
-      "buildx",
-      "CCLA",
-      "CODEOWNER",
-      "dockerhub",
-      "ICLA",
-      "noninteractive",
-      "pydevproject",
-      "rootfs",
-      "Senzing",
-      "senzingapi",
-      "senzingdata",
-      "senzingrepo",
-      "stackoverflow",
-      "toplevel",
-      "yumdownloader"
-    ],
+    "alnum",
+    "aptdownloader",
+    "buildx",
+    "CCLA",
+    "CODEOWNER",
+    "dockerhub",
+    "ICLA",
+    "ignorefile",
+    "noninteractive",
+    "pydevproject",
+    "rootfs",
+    "Senzing",
+    "senzingapi",
+    "senzingdata",
+    "senzingrepo",
+    "stackoverflow",
+    "toplevel",
+    "yumdownloader"
+  ],
   "ignorePaths": [
     ".git/**"
   ]
