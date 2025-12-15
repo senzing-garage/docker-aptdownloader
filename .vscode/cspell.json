@@ -2,19 +2,21 @@
   "version": "0.2",
   "language": "en",
   "words": [
-    "CCLA",
-    "CODEOWNER",
-    "ICLA",
-    "Senzing",
     "alnum",
     "aptdownloader",
     "buildx",
+    "CCLA",
+    "CODEOWNER",
+    "cooldown",
+    "dockerfiles",
     "dockerhub",
     "esbenp",
+    "ICLA",
     "ignorefile",
     "noninteractive",
     "pydevproject",
     "rootfs",
+    "Senzing",
     "senzingapi",
     "senzingdata",
     "senzingrepo",
@@ -22,7 +24,5 @@
     "toplevel",
     "yumdownloader"
   ],
-  "ignorePaths": [
-    ".git/**"
-  ]
+  "ignorePaths": [".git/**"]
 }
